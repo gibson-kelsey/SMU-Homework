@@ -1,6 +1,6 @@
 import csv
 
-csvpath = r"Resources\election_data.csv"
+csvpath = r"Resources\02-Homework_03-Python_Instructions_PyPoll_Resources_election_data.csv"
 print(csvpath)
 
 #inital Total Votes
@@ -43,7 +43,7 @@ with open(csvpath, "r") as csvfile:
 winner = max(candidateDict, key=candidateDict.get)
 print(winner)
 
-candidate_Strings = [f"{key}: {round((candidateDict[key] / total_Votes)*100,3)}% ({candidateDict[key]})" for key in candidateDict.keys()]
+candidate_Strings = [f"{key}: {round((candidateDict[key] *100 / total_Votes),3)}% ({candidateDict[key]})" for key in candidateDict.keys()]
 candidate_Strings = "\n".join(candidate_Strings)
 
 summaryString= f"""Election Results
